@@ -4,15 +4,18 @@ import pg from 'pg';
 import requireAdmin from '../middleware/auth.js';
 
 const router = express.Router();
-
-const db = new pg.Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'reviews',
-  password: process.env.DB_PASSWORD,
-  port: 5432,
-});
-
+const db = process.env.DATABASE_URL
+    ? new pg.Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false },
+    })
+    : new pg.Client({
+        user: 'postgres',
+        host: 'localhost',
+        database: 'reviews',
+        password: process.env.DB_PASSWORD,
+        port: 5432,
+    });
 let dbReady = false;
 
 const dbConnection = db.connect()
