@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+<!-- ==========================================
+     PETRA PAGE
+     Header and footer are handled separately.
+=========================================== -->
+
+<main class="petra-page">
+
+    <!-- 1. HERO -->
+    <section class="petra-hero">
+
+        <img
+            class="petra-hero-image"
+            src="./images/petra/hero.png"
+            alt="Petra sandstone architecture"
+            fetchpriority="high"
+        >
+
+        <div class="petra-hero-overlay"></div>
+        <div class="petra-hero-content">
+
+            <p class="petra-eyebrow">
+                WADI MUSA · JORDAN · UNESCO WORLD HERITAGE
+            </p>
+
+            <h1>
+                Discover the<br>
+                <em>Rose City.</em>
+            </h1>
+
+            <p class="petra-hero-description">
+                Ancient wonders, winding sandstone passages, and
+                stories carved into the mountains. Explore Petra
+                through the eyes of someone who calls this place home.
+            </p>
+
+
+            <div class="petra-hero-signature">
+                <span class="signature-line"></span>
+                <span>A JOURNEY THROUGH TIME</span>
+            </div>
+
+        </div>
+
+        <div class="petra-hero-index">
+            <span>30°19′ N</span>
+            <span>35°27′ E</span>
+        </div>
+    </section>
+
+
+    
+
+    <!-- 3. LANDMARKS -->
+    <section class="petra-landmarks-section" id="petra-landmarks">
+
+        <div class="section-shell">
+
+            <div class="petra-section-heading">
+
+                <div>
+                    <p class="petra-eyebrow-dark">THE ANCIENT CITY</p>
+
+                    <h2>
+                        Places worth<br>
+                        <em>discovering.</em>
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="petra-landmarks-carousel">
+
+                <div class="petra-landmarks-track" id="landmarks-track">
+
+                    <!-- 1. THE SIQ -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="siq"
+                            aria-label="Learn about the Siq"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/siq.png"
+                                    alt="Dramatic rock formations"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">01</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">THE ENTRANCE</span>
+                                <h3>The Siq</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 2. THE TREASURY -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="treasury"
+                            aria-label="Learn about the Treasury"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/treasury.png"
+                                    alt="Ancient stone architecture"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">02</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">THE ICON</span>
+                                <h3>The Treasury</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 3. STREET OF FACADES -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="facades"
+                            aria-label="Learn about the Street of Facades"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/streetoffacades.png"
+                                    alt="Rocky mountain scenery"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">03</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">ROCK-CUT HERITAGE</span>
+                                <h3>Street of Facades</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 4. THE THEATRE -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="theatre"
+                            aria-label="Learn about the Theatre"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/theater.png"
+                                    alt="Ancient architectural structure"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">04</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">ANCIENT LIFE</span>
+                                <h3>The Theatre</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 5. ROYAL TOMBS -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="royal-tombs"
+                            aria-label="Learn about the Royal Tombs"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/royal-tombs.png"
+                                    alt="Historic stone architecture"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">05</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">MONUMENTAL TOMBS</span>
+                                <h3>Royal Tombs</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 6. COLONNADED STREET -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="colonnaded-street"
+                            aria-label="Learn about Colonnaded Street"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/colanneded-street.png"
+                                    alt="Ancient stone ruins"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">06</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">THE ANCIENT CITY</span>
+                                <h3>Colonnaded Street</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 7. GREAT TEMPLE -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="great-temple"
+                            aria-label="Learn about the Great Temple"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/greate-temple.png"
+                                    alt="Historic monumental ruins"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">07</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">NABATAEAN ARCHITECTURE</span>
+                                <h3>Great Temple</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 8. QASR AL-BINT -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="qasr-al-bint"
+                            aria-label="Learn about Qasr al-Bint"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/qaser-al-bint.png"
+                                    alt="Historic stone monument"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">08</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">SACRED HERITAGE</span>
+                                <h3>Qasr al-Bint</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 9. THE MONASTERY -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="monastery"
+                            aria-label="Learn about the Monastery"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/monastery.png"
+                                    alt="Mountain landscape"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">09</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">THE GREAT ASCENT</span>
+                                <h3>The Monastery</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 10. HIGH PLACE OF SACRIFICE -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="high-place"
+                            aria-label="Learn about the High Place of Sacrifice"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/high-place.png"
+                                    alt="Expansive mountain landscape"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">10</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">MOUNTAIN PANORAMAS</span>
+                                <h3>High Place of Sacrifice</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+
+                    <!-- 11. LITTLE PETRA -->
+                    <article class="landmark-card">
+                        <button
+                            class="landmark-card-button"
+                            type="button"
+                            data-detail="little-petra"
+                            aria-label="Learn about Little Petra"
+                        >
+                            <div class="landmark-image-wrap">
+                                <img
+                                    src="./images/petra/little-petra.png"
+                                    alt="Desert landscape"
+                                    loading="lazy"
+                                >
+                                <span class="landmark-number">11</span>
+                                <span class="landmark-open-icon">↗</span>
+                            </div>
+
+                            <div class="landmark-card-content">
+                                <span class="landmark-category">BEYOND THE MAIN CITY</span>
+                                <h3>Little Petra</h3>
+                                <span class="landmark-discover">Discover place ↗</span>
+                            </div>
+                        </button>
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="petra-carousel-controls">
+                <p><span id="landmark-current">01</span> <span>/ 11 PLACES</span></p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 4. TRAILS -->
+    <section class="petra-trails-section" id="petra-trails">
+
+        <div class="section-shell">
+
+            <div class="petra-trails-header">
+
+                <div>
+                    <p class="petra-eyebrow-dark">CHOOSE YOUR ADVENTURE</p>
+                    <h2>Follow the <em>trail.</em></h2>
+                </div>
+
+
+            </div>
+
+
+            <div class="petra-trails-carousel">
+
+                <div class="petra-trails-track" id="trails-track">
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 01</span>
+                            <span class="trail-level easy">EASY</span>
+                        </div>
+                        <h3>Main Trail</h3>
+                        <p class="trail-card-description">
+                            The classic route from the Visitor Centre through
+                            the Siq and onward to Qasr al-Bint.
+                        </p>
+                        <div class="trail-meta">
+                            <span>↔ 3.9 km</span>
+                            <span>◷ 1.5–1.75 h non-stop</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="main-trail">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 02</span>
+                            <span class="trail-level hard">CHALLENGING</span>
+                        </div>
+                        <h3>Al-Khubtha Trail</h3>
+                        <p class="trail-card-description">
+                            Pass the Theatre and Royal Tombs before climbing
+                            towards a famous elevated Treasury viewpoint.
+                        </p>
+                        <div class="trail-meta">
+                            <span>⛰ Uphill climb</span>
+                            <span>◷ Approx. 2–2.5 h for the trail segment</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="khubtha">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 03</span>
+                            <span class="trail-level moderate">MODERATE</span>
+                        </div>
+                        <h3>High Place of Sacrifice</h3>
+                        <p class="trail-card-description">
+                            Climb above the ancient city to explore a historic
+                            ritual site and sweeping views.
+                        </p>
+                        <div class="trail-meta">
+                            <span>⛰ Steep sections</span>
+                            <span>◷ Allow several hours</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="sacrifice-trail">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 04</span>
+                            <span class="trail-level moderate">MODERATE</span>
+                        </div>
+                        <h3>Al-Madras Trail</h3>
+                        <p class="trail-card-description">
+                            A route through archaeological landscapes towards
+                            elevated views of the Treasury.
+                        </p>
+                        <div class="trail-meta">
+                            <span>⛰ Uneven terrain</span>
+                            <span>◷ Varies by route</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="madras">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 05</span>
+                            <span class="trail-level moderate">MODERATE</span>
+                        </div>
+                        <h3>Al-Deir Monastery Trail</h3>
+                        <p class="trail-card-description">
+                            Make your way to the magnificent Monastery,
+                            one of Petra's monumental highlights.
+                        </p>
+                        <div class="trail-meta">
+                            <span>⛰ Many stone steps</span>
+                            <span>◷ Allow extra time</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="deir">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 06</span>
+                            <span class="trail-level challenging">CHALLENGING</span>
+                        </div>
+                        <h3>Back Route to the Monastery</h3>
+                        <p class="trail-card-description">
+                            A longer approach from the Beidha area through
+                            mountain scenery towards Al-Deir.
+                        </p>
+                        <div class="trail-meta">
+                            <span>⛰ Remote terrain</span>
+                            <span>◷ Route-dependent</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="back-route">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 07</span>
+                            <span class="trail-level easy">EASY–MODERATE</span>
+                        </div>
+                        <h3>Little Petra Trail</h3>
+                        <p class="trail-card-description">
+                            Explore Siq al-Barid and the archaeological
+                            remains of this neighbouring site.
+                        </p>
+                        <div class="trail-meta">
+                            <span>↔ Separate site</span>
+                            <span>◷ Approx. 3 h on some routes</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="little-petra-trail">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 08</span>
+                            <span class="trail-level challenging">CHALLENGING</span>
+                        </div>
+                        <h3>Umm al-Biyara Trail</h3>
+                        <p class="trail-card-description">
+                            A demanding ascent towards a prominent mountain
+                            overlooking Petra.
+                        </p>
+                        <div class="trail-meta">
+                            <span>⛰ Steep ascent</span>
+                            <span>◷ Route-dependent</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="biyara">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 09</span>
+                            <span class="trail-level challenging">CHALLENGING</span>
+                        </div>
+                        <h3>Jabal Haroun Trail</h3>
+                        <p class="trail-card-description">
+                            A long mountain route towards the area associated
+                            with the traditional tomb of Aaron.
+                        </p>
+                        <div class="trail-meta">
+                            <span>↔ Long-distance route</span>
+                            <span>◷ Plan a full day</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="haroun">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+
+                    <article class="trail-card">
+                        <div class="trail-card-top">
+                            <span>TRAIL 10</span>
+                            <span class="trail-level challenging">CHALLENGING</span>
+                        </div>
+                        <h3>Wadi Sabra Trail</h3>
+                        <p class="trail-card-description">
+                            A longer journey beyond the central monuments
+                            into the wider archaeological landscape.
+                        </p>
+                        <div class="trail-meta">
+                            <span>↔ Long-distance route</span>
+                            <span>◷ Often a full day</span>
+                        </div>
+                        <button class="trail-details-button" data-trail="sabra">
+                            Trail details <span>↗</span>
+                        </button>
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="petra-carousel-controls">
+                <p><span id="trail-current">01</span> <span>/ 10 TRAILS</span></p>
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- ==================== EXPERIENCES ==================== -->
+<!-- =====================================
+     PETRA EXPERIENCES
+===================================== -->
+
+<section class="experiences-v2" id="experiences">
+
+    <div class="experiences-v2-heading">
+        <span>DISCOVER YOUR ADVENTURE</span>
+        <h2>Find Your Kind of Adventure</h2>
+        <p>Explore Petra and Jordan through unforgettable experiences.</p>
+    </div>
+
+    <div class="experiences-v2-grid" id="experiencesGrid">
+
+        <button class="experience-tile" data-index="0">
+            <span class="tile-number">01</span>
+            <span class="tile-icon">🌅</span>
+            <span class="tile-name">Sunrise Tour</span>
+        </button>
+
+        <button class="experience-tile" data-index="1">
+            <span class="tile-number">02</span>
+            <span class="tile-icon">🌄</span>
+            <span class="tile-name">Sunset Tour</span>
+        </button>
+
+        <button class="experience-tile" data-index="2">
+            <span class="tile-number">03</span>
+            <span class="tile-icon">🐎</span>
+            <span class="tile-name">Horse Tour</span>
+        </button>
+
+        <button class="experience-tile" data-index="3">
+            <span class="tile-number">04</span>
+            <span class="tile-icon">🏎️</span>
+            <span class="tile-name">Buggy Ride</span>
+        </button>
+
+        <button class="experience-tile" data-index="4">
+            <span class="tile-number">05</span>
+            <span class="tile-icon">🐪</span>
+            <span class="tile-name">Camel Tour</span>
+        </button>
+
+        <button class="experience-tile" data-index="5">
+            <span class="tile-number">06</span>
+            <span class="tile-icon">🚙</span>
+            <span class="tile-name">Jeep Tour</span>
+        </button>
+
+        <button class="experience-tile" data-index="6">
+            <span class="tile-number">07</span>
+            <span class="tile-icon">🏛️</span>
+            <span class="tile-name">City Tour</span>
+        </button>
+
+        <button class="experience-tile" data-index="7">
+            <span class="tile-number">08</span>
+            <span class="tile-icon">🏜️</span>
+            <span class="tile-name">Desert Tour</span>
+        </button>
+
+        <button class="experience-tile" data-index="8">
+            <span class="tile-number">09</span>
+            <span class="tile-icon">🥾</span>
+            <span class="tile-name">Hiking</span>
+        </button>
+
+        <button class="experience-tile" data-index="9">
+            <span class="tile-number">10</span>
+            <span class="tile-icon">⛺</span>
+            <span class="tile-name">Camping</span>
+        </button>
+
+        <button class="experience-tile" data-index="10">
+            <span class="tile-number">11</span>
+            <span class="tile-icon">✨</span>
+            <span class="tile-name">Stargazing</span>
+        </button>
+
+        <button class="experience-tile" data-index="11">
+            <span class="tile-number">12</span>
+            <span class="tile-icon">🎭</span>
+            <span class="tile-name">Local Events</span>
+        </button>
+
+        <button class="experience-tile" data-index="12">
+            <span class="tile-number">13</span>
+            <span class="tile-icon">📸</span>
+            <span class="tile-name">Photography</span>
+        </button>
+
+        <button class="experience-tile" data-index="13">
+            <span class="tile-number">14</span>
+            <span class="tile-icon">🌙</span>
+            <span class="tile-name">Petra by Night</span>
+        </button>
+
+        <button class="experience-tile" data-index="14">
+            <span class="tile-number">15</span>
+            <span class="tile-icon">🍵</span>
+            <span class="tile-name">Bedouin Culture</span>
+        </button>
+
+        <button class="experience-tile" data-index="15">
+            <span class="tile-number">16</span>
+            <span class="tile-icon">🍽️</span>
+            <span class="tile-name">Local Cuisine</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+    <!-- 7. FINAL CTA -->
+    <section class="petra-final-cta" id="petra-contact">
+
+        <img
+            class="petra-final-cta-image"
+            src="./images/petra/cta.png"
+            alt=""
+            loading="lazy"
+        >
+
+        <div class="petra-final-cta-overlay"></div>
+
+        <div class="petra-final-cta-card">
+
+            <p class="petra-eyebrow-dark">YOUR PETRA STORY STARTS HERE</p>
+
+            <h2>
+                Don't just see Petra.<br>
+                <em>Feel its story.</em>
+            </h2>
+
+            <p>
+                Discover the ancient city with a local perspective
+                and make your time in Wadi Musa memorable.
+            </p>
+
+            <a href="/contact" class="petra-button petra-button-primary">
+                Get in Touch <span>↗</span>
+            </a>
+
+            <div class="petra-cta-signature">
+                ARSALAN AL-SALEEM · YOUR LOCAL GUIDE
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SHARED DETAIL MODAL: LANDMARKS, TRAILS, EXPERIENCES -->
+    <div
+        class="petra-detail-modal"
+        id="petra-detail-modal"
+        aria-hidden="true"
+    >
+
+        <div class="petra-modal-backdrop" data-modal-close></div>
+
+        <div
+            class="petra-modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="petra-modal-title"
+            tabindex="-1"
+        >
+
+            <button
+                class="petra-modal-close"
+                type="button"
+                aria-label="Close details"
+                data-modal-close
+            >
+                &times;
+            </button>
+
+            <div class="petra-modal-image-wrap">
+                <img id="petra-modal-image" src="" alt="">
+                <span id="petra-modal-category"></span>
+            </div>
+
+            <div class="petra-modal-content">
+
+                <p class="petra-modal-overline">EXPLORE PETRA</p>
+
+                <h2 id="petra-modal-title"></h2>
+
+                <p id="petra-modal-description"></p>
+
+                <div class="petra-modal-facts" id="petra-modal-facts"></div>
+
+                <p class="petra-modal-note" id="petra-modal-note"></p>
+
+                <a href="/contact" class="petra-button petra-button-primary">
+                    Ask Your Local Guide <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+    <%- include('partials/footer') %>
+    <script src="/js/main.js" defer></script>
+</body>
+</html>

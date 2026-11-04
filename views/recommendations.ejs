@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+<main class="recommendations-page">
+
+  <!-- Hero -->
+  <section class="recommendations-hero">
+
+    <div class="recommendations-hero-content">
+      <span class="recommendations-eyebrow">
+        STORIES FROM THE JOURNEY
+      </span>
+
+      <h1>
+        Every journey<br>
+        leaves a <em>story.</em>
+      </h1>
+
+      <p>
+        Discover the experiences, memories, and recommendations
+        shared by travellers who explored Jordan.
+      </p>
+    </div>
+
+    <div class="recommendations-hero-footer">
+      <span>ARSALAN AL-SALEEM</span>
+      <span>TRAVEL EXPERIENCES · JORDAN</span>
+    </div>
+
+  </section>
+
+
+  <!-- Recommendations -->
+  <section
+    class="recommendations-section"
+    id="visitor-recommendations"
+  >
+
+    <div class="recommendations-section-heading">
+      <div>
+        <span class="recommendations-eyebrow">
+          TRAVELLER TESTIMONIALS
+        </span>
+
+        <h2>Words worth <em>sharing.</em></h2>
+      </div>
+
+      <button
+        type="button"
+        class="recommendations-button"
+        id="open-recommendation-form"
+      >
+        WRITE A RECOMMENDATION <span>+</span>
+      </button>
+    </div>
+
+
+    <!-- Approved recommendations will be rendered here -->
+    <div
+      class="recommendations-grid"
+      id="recommendations-list"
+    >
+<% if (recommendations && recommendations.length > 0) { %>
+
+  <% recommendations.forEach((item) => { %>
+
+    <article class="recommendation-card">
+
+      <div
+        class="recommendation-stars"
+        aria-label="<%= item.rating %> out of 5 stars"
+      >
+        <% for (let star = 0; star < item.rating; star++) { %>
+          ★
+        <% } %>
+      </div>
+
+      <blockquote>
+        <%= item.review %>
+      </blockquote>
+
+      <div class="recommendation-card-footer">
+        <div>
+          <strong><%= item.vname %></strong>
+          <span><%= item.destination %>, Jordan</span>
+        </div>
+
+        <span class="recommendation-quote-mark" aria-hidden="true">”</span>
+      </div>
+
+    </article>
+
+  <% }); %>
+
+<% } else { %>
+
+  <div class="recommendations-empty">
+    <h3>Every journey begins with a story.</h3>
+    <p>Be the first to share your experience of Jordan.</p>
+  </div>
+
+<% } %>
+
+
+  <!-- Submission form -->
+  <section
+    class="recommendation-form-section"
+    id="recommendation-form-section"
+    hidden
+  >
+
+    <div class="recommendation-form-intro">
+      <span class="recommendations-eyebrow">
+        SHARE YOUR EXPERIENCE
+      </span>
+
+      <h2>Your story<br><em>belongs here.</em></h2>
+
+      <p>
+        Tell us about a place you loved in Jordan
+        and help other travellers plan their journey.
+      </p>
+    </div>
+
+
+    <form id="recommendation-form">
+
+      <div class="recommendation-form-field">
+        <label for="visitor-name">Your name</label>
+
+        <input
+          type="text"
+          id="visitor-name"
+          name="visitor_name"
+          placeholder="How should we call you?"
+          maxlength="80"
+          required
+        >
+      </div>
+
+
+      <div class="recommendation-form-field">
+        <label for="recommendation-destination">
+          Which place are you recommending?
+        </label>
+
+        <input
+          type="text"
+          id="recommendation-destination"
+          name="destination"
+          placeholder="e.g. Petra, Wadi Rum, Aqaba"
+          maxlength="120"
+          required
+        >
+      </div>
+
+
+      <fieldset class="recommendation-rating-field">
+        <legend>Your experience</legend>
+
+        <div
+          class="recommendation-rating"
+          role="radiogroup"
+          aria-label="Choose a rating from one to five stars"
+        >
+          <input type="radio" id="rating-5" name="rating" value="5" required>
+          <label for="rating-5" title="5 stars">★</label>
+
+          <input type="radio" id="rating-4" name="rating" value="4">
+          <label for="rating-4" title="4 stars">★</label>
+
+          <input type="radio" id="rating-3" name="rating" value="3">
+          <label for="rating-3" title="3 stars">★</label>
+
+          <input type="radio" id="rating-2" name="rating" value="2">
+          <label for="rating-2" title="2 stars">★</label>
+
+          <input type="radio" id="rating-1" name="rating" value="1">
+          <label for="rating-1" title="1 star">★</label>
+        </div>
+      </fieldset>
+
+
+      <div class="recommendation-form-field">
+        <label for="recommendation-text">
+          Your recommendation
+        </label>
+
+        <textarea
+          id="recommendation-text"
+          name="review_text"
+          rows="6"
+          minlength="10"
+          maxlength="1500"
+          placeholder="Share your experience and what you would recommend to other travellers..."
+          required
+        ></textarea>
+
+        <span class="recommendation-character-note">
+          Maximum 1,500 characters.
+        </span>
+      </div>
+
+
+      <button type="submit" class="recommendations-button">
+        SUBMIT YOUR STORY <span>↗</span>
+      </button>
+
+      <p
+        id="recommendation-form-message"
+        class="recommendation-form-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <p class="recommendation-privacy-note">
+        Your recommendation will be reviewed before it appears publicly.
+      </p>
+
+    </form>
+
+  </section>
+
+
+  <!-- Closing -->
+  <section class="recommendations-closing">
+    <span class="recommendations-eyebrow">THE JOURNEY CONTINUES</span>
+
+    <h2>Have a story <em>to tell?</em></h2>
+
+    <p>
+      Your experience might inspire someone's next adventure in Jordan.
+    </p>
+
+    <button
+      type="button"
+      class="recommendations-button recommendations-button-light"
+      id="open-recommendation-form-bottom"
+    >
+      SHARE YOUR STORY <span>↗</span>
+    </button>
+  </section>
+
+</main>
+
+
+    <%- include('partials/footer') %>
+    <script src="/js/main.js" defer></script>
+</body>
+</html>

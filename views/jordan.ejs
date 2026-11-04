@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main class="around-jordan-page">
+
+  <!-- ================= HERO ================= -->
+
+  <section class="aj-hero">
+
+    <div class="aj-hero-image"></div>
+    <div class="aj-hero-overlay"></div>
+
+    <div class="aj-hero-top">
+      <span>THE HASHEMITE KINGDOM OF JORDAN</span>
+      <span>29° 31' N — 35° 00' E</span>
+    </div>
+
+    <div class="aj-hero-content">
+
+      <span class="aj-eyebrow">
+        A LAND OF STORIES & DISCOVERY
+      </span>
+
+      <h1>
+        Beyond Petra,<br>
+        <em>Discover Jordan.</em>
+      </h1>
+
+      <p>
+        From ancient cities and desert horizons to the waters
+        of the Dead Sea, discover a country full of extraordinary
+        places and unforgettable journeys.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="aj-map-section aj-map-redesign" id="jordan-map">
+  <div class="aj-map-heading">
+    <div>
+      <span class="aj-eyebrow">FIELD NOTES · 01</span>
+      <h2>Jordan, <em>on the map.</em></h2>
+      <p>From ancient cities to desert horizons, find your next destination.</p>
+    </div>
+
+    <span class="aj-map-count">
+      <span class="aj-live-dot"></span>
+      15 DESTINATIONS
+    </span>
+  </div>
+
+  <div class="aj-map-layout">
+
+    <!-- Real geographic map -->
+    <div class="aj-map-canvas">
+      <div id="jordan-real-map"
+           role="application"
+           aria-label="Interactive map of Jordan and its tourist destinations">
+        <div class="aj-map-loading">Preparing your journey...</div>
+      </div>
+
+      <div class="aj-map-map-label">
+        <span>THE HASHEMITE KINGDOM</span>
+        <strong>OF JORDAN</strong>
+      </div>
+
+      <div class="aj-map-bottom-note">
+        <span>35° E</span>
+        <span>DISCOVER AT YOUR OWN PACE</span>
+        <span>30° N</span>
+      </div>
+    </div>
+
+    <!-- Destination information panel -->
+    <aside class="aj-map-sidebar">
+      <span class="aj-eyebrow">THE TRAVEL NOTEBOOK</span>
+
+      <div class="aj-sidebar-rule"></div>
+
+      <p class="aj-sidebar-kicker" id="aj-map-region">
+        YOUR NEXT DISCOVERY
+      </p>
+
+      <h3 id="aj-map-title">
+        The journey
+        <em>is yours.</em>
+      </h3>
+
+      <p id="aj-map-description">
+        Select a destination on the map to discover its landscapes,
+        history, and experiences.
+      </p>
+
+      <div class="aj-selected-coordinates" id="aj-map-coordinates">
+        EXPLORE JORDAN
+      </div>
+
+      <div class="aj-sidebar-footer">
+        <span>15 PLACES</span>
+        <span>ONE EXTRAORDINARY COUNTRY</span>
+      </div>
+    </aside>
+
+  </div>
+
+  <div class="aj-map-attribution">
+    Geographic map data ©
+    <a href="https://www.openstreetmap.org/copyright"
+       target="_blank"
+       rel="noopener noreferrer">OpenStreetMap contributors</a>.
+    Map tiles by
+    <a href="https://www.openstreetmap.org/"
+       target="_blank"
+       rel="noopener noreferrer">OpenStreetMap</a>.
+  </div>
+</section>
+  <!-- ================= DESTINATIONS CAROUSEL ================= -->
+
+  <section class="aj-destinations" id="jordan-destinations">
+
+    <div class="aj-destinations-heading">
+
+      <div>
+        <div class="aj-intro-label">
+          <span class="aj-section-number">03</span>
+          <span>THE PLACES THAT MAKE JORDAN</span>
+        </div>
+
+        <h2>
+          Where will the road<br>
+          <em>take you?</em>
+        </h2>
+      </div>
+
+    </div>
+
+
+    <div class="aj-destination-track" id="aj-destination-track">
+
+      <!-- AMMAN -->
+
+      <article class="aj-destination-card" id="dest-amman"
+        data-destination-card="amman">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Jordan destinations">
+
+          <img
+            src="./images/jordan/amman.png"
+            alt="Historic architecture and city scenery"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">01</span>
+          <span class="aj-card-category">THE CAPITAL</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">CENTRAL JORDAN</span>
+          <h3>Amman</h3>
+          <p>
+            A lively capital where ancient ruins, traditional
+            markets, cafés, and contemporary culture meet.
+          </p>
+          <span class="aj-destination-highlights">
+            Citadel · Roman Theatre · Downtown
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- JERASH -->
+
+      <article class="aj-destination-card" id="dest-jerash"
+        data-destination-card="jerash">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Jerash">
+
+          <img
+            src="./images/jordan/jarash.png"
+            alt="Ancient stone ruins"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">02</span>
+          <span class="aj-card-category">ANCIENT CIVILIZATIONS</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE NORTH</span>
+          <h3>Jerash</h3>
+          <p>
+            Walk along colonnaded streets and explore one of
+            the region's remarkable Roman archaeological cities.
+          </p>
+          <span class="aj-destination-highlights">
+            Hadrian's Arch · Oval Plaza · Temples
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- AJLOUN -->
+
+      <article class="aj-destination-card" id="dest-ajloun"
+        data-destination-card="ajloun">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Ajloun">
+
+          <img
+            src="./images/jordan/ajloun.png"
+            alt="Woodland scenery"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">03</span>
+          <span class="aj-card-category">FOREST & HERITAGE</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE NORTH</span>
+          <h3>Ajloun</h3>
+          <p>
+            Discover green hills, forest trails, and a historic
+            castle overlooking the surrounding countryside.
+          </p>
+          <span class="aj-destination-highlights">
+            Ajloun Castle · Forest Reserve
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- UMM QAIS -->
+
+      <article class="aj-destination-card"
+        data-destination-card="umm-qais">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Umm Qais">
+
+          <img
+            src="./images/jordan/um-qais.png"
+            alt="Expansive natural landscape"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">04</span>
+          <span class="aj-card-category">PANORAMIC VIEWS</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE NORTH</span>
+          <h3>Umm Qais</h3>
+          <p>
+            Explore ancient Gadara and enjoy sweeping views
+            over the northern valleys and surrounding waters.
+          </p>
+          <span class="aj-destination-highlights">
+            Ancient Gadara · Archaeological Ruins
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- AS-SALT -->
+
+      <article class="aj-destination-card"
+        data-destination-card="salt">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover As-Salt">
+
+          <img
+            src="./images/jordan/salt.png"
+            alt="Historic architecture"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">05</span>
+          <span class="aj-card-category">CULTURE & ARCHITECTURE</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">CENTRAL JORDAN</span>
+          <h3>As-Salt</h3>
+          <p>
+            Wander through historic streets known for their
+            distinctive architecture and welcoming atmosphere.
+          </p>
+          <span class="aj-destination-highlights">
+            Historic Downtown · Heritage Houses
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- MADABA -->
+
+      <article class="aj-destination-card"
+        data-destination-card="madaba">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Madaba">
+
+          <img
+            src="./images/jordan/madaba.png"
+            alt="Historic religious architecture"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">06</span>
+          <span class="aj-card-category">ART & HISTORY</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">CENTRAL JORDAN</span>
+          <h3>Madaba</h3>
+          <p>
+            Discover mosaics, historic churches, and centuries
+            of artistic and religious heritage.
+          </p>
+          <span class="aj-destination-highlights">
+            Mosaic Map · Historic Churches
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- MOUNT NEBO -->
+
+      <article class="aj-destination-card"
+        data-destination-card="mount-nebo">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Mount Nebo">
+
+          <img
+            src="./images/jordan/nebo.png"
+            alt="Mountain landscape"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">07</span>
+          <span class="aj-card-category">SACRED LANDSCAPES</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">CENTRAL JORDAN</span>
+          <h3>Mount Nebo</h3>
+          <p>
+            Visit a landmark of religious significance and
+            take in the vast landscapes beyond the mountain.
+          </p>
+          <span class="aj-destination-highlights">
+            Viewpoints · Religious Heritage
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- DEAD SEA -->
+
+      <article class="aj-destination-card"
+        data-destination-card="dead-sea">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover the Dead Sea">
+
+          <img
+            src="./images/jordan/dead-sea.png"
+            alt="Peaceful water and coastline"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">08</span>
+          <span class="aj-card-category">REST & WELLNESS</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE JORDAN VALLEY</span>
+          <h3>The Dead Sea</h3>
+          <p>
+            Experience extraordinary salt-rich waters, mineral
+            mud, dramatic scenery, and a slower pace of travel.
+          </p>
+          <span class="aj-destination-highlights">
+            Floating · Wellness · Scenic Resorts
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- WADI MUJIB -->
+
+      <article class="aj-destination-card"
+        data-destination-card="wadi-mujib">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Wadi Mujib">
+
+          <img
+            src="./images/jordan/wadi-mujib.png"
+            alt="Nature and rugged landscape"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">09</span>
+          <span class="aj-card-category">OUTDOOR ADVENTURE</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">CENTRAL JORDAN</span>
+          <h3>Wadi Mujib</h3>
+          <p>
+            Explore dramatic canyon scenery and seasonal
+            outdoor adventures where permitted.
+          </p>
+          <span class="aj-destination-highlights">
+            Canyon Trails · Nature Reserve
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- KARAK -->
+
+      <article class="aj-destination-card"
+        data-destination-card="karak">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Karak">
+
+          <img
+            src="./images/jordan/karak.png"
+            alt="Historic stone fortifications"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">10</span>
+          <span class="aj-card-category">MEDIEVAL HISTORY</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE KING'S HIGHWAY</span>
+          <h3>Karak</h3>
+          <p>
+            Explore a commanding medieval castle and discover
+            the stories of the region's historic trade routes.
+          </p>
+          <span class="aj-destination-highlights">
+            Karak Castle · Historic Town
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- DANA -->
+
+      <article class="aj-destination-card"
+        data-destination-card="dana">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Dana">
+
+          <img
+            src="./images/jordan/dana.png"
+            alt="Mountain scenery and valleys"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">11</span>
+          <span class="aj-card-category">ECO-ADVENTURE</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE SOUTH</span>
+          <h3>Dana & Feynan</h3>
+          <p>
+            Discover a remarkable landscape of mountains,
+            valleys, biodiversity, and long-distance hiking trails.
+          </p>
+          <span class="aj-destination-highlights">
+            Dana Biosphere Reserve · Hiking
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- SHOBAK -->
+
+      <article class="aj-destination-card"
+        data-destination-card="shobak">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Shobak">
+
+          <img
+            src="./images/jordan/shobak.png"
+            alt="Historic stone architecture"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">12</span>
+          <span class="aj-card-category">HISTORY & EXPLORATION</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE SOUTH</span>
+          <h3>Shobak Castle</h3>
+          <p>
+            Visit a historic Crusader fortress surrounded by
+            the rugged scenery of southern Jordan.
+          </p>
+          <span class="aj-destination-highlights">
+            Castle · Historic Landscapes
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- PETRA -->
+
+      <article class="aj-destination-card"
+        data-destination-card="petra">
+
+        <a class="aj-destination-image"
+          href="/petra"
+          aria-label="Explore Petra">
+
+          <img
+            src="./images/jordan/petra.png"
+            alt="Sandstone archaeological landscape"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">13</span>
+          <span class="aj-card-category">ANCIENT WONDER</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">SOUTHERN JORDAN</span>
+          <h3>Petra</h3>
+          <p>
+            Walk through the Siq, admire the Treasury, and
+            explore the extraordinary Nabataean city.
+          </p>
+          <span class="aj-destination-highlights">
+            The Treasury · The Monastery · Ancient Trails
+          </span>
+          <a href="/petra" class="aj-card-link">
+            EXPLORE PETRA <span>↗</span>
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- WADI RUM -->
+
+      <article class="aj-destination-card"
+        data-destination-card="wadi-rum">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Wadi Rum">
+
+          <img
+            src="./images/jordan/rum.png"
+            alt="Vast desert dunes and rocky landscape"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">14</span>
+          <span class="aj-card-category">THE DESERT EXPERIENCE</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">SOUTHERN JORDAN</span>
+          <h3>Wadi Rum</h3>
+          <p>
+            Explore towering sandstone formations, desert trails,
+            Bedouin culture, and extraordinary night skies.
+          </p>
+          <span class="aj-destination-highlights">
+            Jeep Tours · Camping · Stargazing
+          </span>
+        </div>
+
+      </article>
+
+
+      <!-- AQABA -->
+
+      <article class="aj-destination-card"
+        data-destination-card="aqaba">
+
+        <a class="aj-destination-image"
+          href="https://international.visitjordan.com/where-to-go/"
+          target="_blank" rel="noopener"
+          aria-label="Discover Aqaba">
+
+          <img
+            src="./images/jordan/aqaba.png"
+            alt="Sea, coastline, and beach"
+            loading="lazy"
+          >
+
+          <span class="aj-card-number">15</span>
+          <span class="aj-card-category">RED SEA ESCAPE</span>
+        </a>
+
+        <div class="aj-destination-info">
+          <span class="aj-destination-region">THE FAR SOUTH</span>
+          <h3>Aqaba</h3>
+          <p>
+            Enjoy Red Sea coastlines, coral reefs, boat trips,
+            and the relaxed atmosphere of a seaside city.
+          </p>
+          <span class="aj-destination-highlights">
+            Snorkeling · Diving · Red Sea
+          </span>
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <div class="aj-carousel-footer">
+      <span>15 DESTINATIONS TO BEGIN WITH</span>
+    </div>
+
+  </section>
+
+
+  <!-- ================= FINAL CTA ================= -->
+
+  <section class="aj-final-cta">
+
+    <div class="aj-final-cta-background"></div>
+
+    <div class="aj-final-cta-content">
+
+      <span>YOUR JORDAN STORY STARTS HERE</span>
+
+      <h2>
+        Don't just visit Jordan.<br>
+        <em>Experience it.</em>
+      </h2>
+
+      <p>
+        Let's create a journey around the places you want to discover.
+      </p>
+
+      
+
+    </div>
+
+    <div class="aj-final-cta-stamp" aria-hidden="true">
+      <span>THE</span>
+      <strong>JOURNEY</strong>
+      <span>IS YOURS</span>
+      <i>✳</i>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <%- include('partials/footer') %>
+    <script src="/js/main.js" defer></script>
+</body>
+</html>

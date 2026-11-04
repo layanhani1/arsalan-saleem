@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard | Arsalan Al-Saleem</title>
+
+  <style>
+    :root {
+      --green: #A1B5A8;
+      --khaki: #CBB093;
+      --redwood: #A4624D;
+      --almond: #F5DFC5;
+      --dark: #34382F;
+      --white: #fffaf3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f8f3eb;
+      color: var(--dark);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 6%;
+      background: var(--white);
+      border-bottom: 1px solid #e8ddce;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 26px;
+    }
+
+    header p {
+      margin: 7px 0 0;
+      color: #77776d;
+      font-size: 13px;
+    }
+
+    .admin-label {
+      color: var(--redwood);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    main {
+      width: min(1100px, 90%);
+      margin: 45px auto;
+    }
+
+    .page-heading {
+      margin-bottom: 28px;
+    }
+
+    .page-heading h2 {
+      margin-bottom: 10px;
+      font-family: Georgia, serif;
+      font-size: 36px;
+    }
+
+    .page-heading p {
+      color: #77776d;
+      line-height: 1.7;
+    }
+
+    .section {
+      margin-top: 45px;
+      scroll-margin-top: 20px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 25px;
+    }
+
+    .count {
+      display: inline-block;
+      padding: 8px 13px;
+      border-radius: 30px;
+      background: #e2e9e1;
+      font-size: 13px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0 35px;
+    }
+
+    .section-nav a {
+      padding: 10px 15px;
+      border: 1px solid #e2d5c4;
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .section-nav a:hover {
+      background: #e2e9e1;
+    }
+
+    .recommendation-card {
+      margin-bottom: 22px;
+      padding: 27px;
+      border: 1px solid #e8ddce;
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: 0 5px 20px rgba(52, 56, 47, 0.04);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .visitor-name {
+      margin: 0 0 7px;
+      font-size: 19px;
+    }
+
+    .destination {
+      color: var(--redwood);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .rating {
+      color: #c18b27;
+      letter-spacing: 3px;
+      white-space: nowrap;
+    }
+
+    .review-text {
+      margin: 0;
+      color: #55574f;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+    }
+
+    .date {
+      margin-top: 20px;
+      color: #898579;
+      font-size: 12px;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .status-pending {
+      background: #f5e8c9;
+      color: #795d21;
+    }
+
+    .status-approved {
+      background: #dce8dc;
+      color: #34543b;
+    }
+
+    .status-rejected {
+      background: #f2dfd8;
+      color: #8b3f32;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #e8ddce;
+    }
+
+    .action-button {
+      padding: 11px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .action-button:hover {
+      opacity: 0.85;
+    }
+
+    .approve-button {
+      background: #dce8dc;
+      color: #34543b;
+    }
+
+    .reject-button,
+    .delete-button {
+      background: #f2dfd8;
+      color: #8b3f32;
+    }
+
+    .empty-state {
+      padding: 35px 25px;
+      border: 1px dashed #cbb093;
+      border-radius: 16px;
+      text-align: center;
+      line-height: 1.8;
+      color: #77776d;
+    }
+    .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logout-button {
+  padding: 10px 16px;
+  border: 1px solid #d9c7b5;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--redwood);
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #f2dfd8;
+}
+
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .page-heading h2 {
+        font-size: 29px;
+      }
+
+      .recommendation-card {
+        padding: 20px;
+      }
+
+      .card-top {
+        flex-direction: column;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .card-actions {
+        flex-direction: column;
+      }
+
+      .action-button {
+        width: 100%;
+      }
+      .header-actions {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Admin Dashboard</h1>
+      <p>Arsalan Al-Saleem · Recommendations Management</p>
+    </div>
+
+<div class="header-actions">
+  <div class="admin-label">
+    Signed in as <%= admin.username %>
+  </div>
+
+  <form method="POST" action="/admin/logout">
+    <button type="submit" class="logout-button">
+      Log Out ↗
+    </button>
+  </form>
+</div>
+
+
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <h2>Visitor Recommendations</h2>
+      <p>
+        Review and manage visitor experiences before and after publication.
+      </p>
+    </section>
+
+<nav class="section-nav" aria-label="Recommendation sections">
+  <a href="#pending">Pending (<%= pendingRecommendations.length %>)</a>
+  <a href="#approved">Approved (<%= approvedRecommendations.length %>)</a>
+  <a href="#rejected">Rejected (<%= rejectedRecommendations.length %>)</a>
+</nav>
+
+<!-- Pending Recommendations -->
+<section class="section" id="pending">
+  <div class="section-heading">
+    <h2>Pending Recommendations</h2>
+    <span class="count">
+      <%= pendingRecommendations.length %> pending
+    </span>
+  </div>
+
+  <% if (pendingRecommendations.length === 0) { %>
+    <div class="empty-state">
+      <h3>All caught up!</h3>
+      <p>There are no recommendations waiting for review.</p>
+    </div>
+  <% } else { %>
+    <% pendingRecommendations.forEach((item) => { %>
+      <article class="recommendation-card">
+        <div class="card-top">
+          <div>
+            <h3 class="visitor-name"><%= item.vname %></h3>
+            <div class="destination"><%= item.destination %></div>
+            <span class="status status-pending">Pending</span>
+          </div>
+
+          <div class="rating"
+               aria-label="<%= item.rating %> out of 5 stars">
+            <% for (let star = 0; star < item.rating; star++) { %>★<% } %>
+          </div>
+        </div>
+
+        <blockquote class="review-text"><%= item.review %></blockquote>
+
+        <div class="date">
+          Submitted: <%= new Date(item.created_at).toLocaleDateString('en-GB') %>
+        </div>
+
+        <div class="card-actions">
+          <form method="POST"
+                action="/admin/recommendations/<%= item.id %>/approve"
+                onsubmit="return confirm('Approve this recommendation?');">
+            <button type="submit" class="action-button approve-button">
+              ✓ Approve
+            </button>
+          </form>
+
+          <form method="POST"
+                action="/admin/recommendations/<%= item.id %>/reject"
+                onsubmit="return confirm('Reject this recommendation?');">
+            <button type="submit" class="action-button reject-button">
+              ✕ Reject
+            </button>
+          </form>
+        </div>
+      </article>
+    <% }); %>
+  <% } %>
+</section>
+
+<!-- Approved Recommendations -->
+<section class="section" id="approved">
+  <div class="section-heading">
+    <h2>Approved Recommendations</h2>
+    <span class="count">
+      <%= approvedRecommendations.length %> approved
+    </span>
+  </div>
+
+  <% if (approvedRecommendations.length === 0) { %>
+    <div class="empty-state">
+      <h3>No approved recommendations yet</h3>
+      <p>Approved visitor experiences will appear here.</p>
+    </div>
+  <% } else { %>
+    <% approvedRecommendations.forEach((item) => { %>
+      <article class="recommendation-card">
+        <div class="card-top">
+          <div>
+            <h3 class="visitor-name"><%= item.vname %></h3>
+            <div class="destination"><%= item.destination %></div>
+            <span class="status status-approved">Approved</span>
+          </div>
+
+          <div class="rating"
+               aria-label="<%= item.rating %> out of 5 stars">
+            <% for (let star = 0; star < item.rating; star++) { %>★<% } %>
+          </div>
+        </div>
+
+        <blockquote class="review-text"><%= item.review %></blockquote>
+
+        <div class="date">
+          Submitted: <%= new Date(item.created_at).toLocaleDateString('en-GB') %>
+        </div>
+
+        <div class="card-actions">
+          <form method="POST"
+                action="/admin/recommendations/<%= item.id %>/reject"
+                onsubmit="return confirm('Move this recommendation to Rejected?');">
+            <button type="submit" class="action-button reject-button">
+              Move to Rejected
+            </button>
+          </form>
+
+          <form method="POST"
+                action="/admin/recommendations/<%= item.id %>/delete"
+                onsubmit="return confirm('Permanently delete this recommendation? This cannot be undone.');">
+            <button type="submit" class="action-button delete-button">
+              Delete
+            </button>
+          </form>
+        </div>
+      </article>
+    <% }); %>
+  <% } %>
+</section>
+
+<!-- Rejected Recommendations -->
+<section class="section" id="rejected">
+  <div class="section-heading">
+    <h2>Rejected Recommendations</h2>
+    <span class="count">
+      <%= rejectedRecommendations.length %> rejected
+    </span>
+  </div>
+
+  <% if (rejectedRecommendations.length === 0) { %>
+    <div class="empty-state">
+      <h3>No rejected recommendations</h3>
+      <p>Rejected recommendations will appear here.</p>
+    </div>
+  <% } else { %>
+    <% rejectedRecommendations.forEach((item) => { %>
+      <article class="recommendation-card">
+        <div class="card-top">
+          <div>
+            <h3 class="visitor-name"><%= item.vname %></h3>
+            <div class="destination"><%= item.destination %></div>
+            <span class="status status-rejected">Rejected</span>
+          </div>
+
+          <div class="rating"
+               aria-label="<%= item.rating %> out of 5 stars">
+            <% for (let star = 0; star < item.rating; star++) { %>★<% } %>
+          </div>
+        </div>
+
+        <blockquote class="review-text"><%= item.review %></blockquote>
+
+        <div class="date">
+          Submitted: <%= new Date(item.created_at).toLocaleDateString('en-GB') %>
+        </div>
+
+        <div class="card-actions">
+          <form method="POST"
+                action="/admin/recommendations/<%= item.id %>/approve"
+                onsubmit="return confirm('Approve this recommendation and publish it?');">
+            <button type="submit" class="action-button approve-button">
+              ✓ Approve
+            </button>
+          </form>
+
+          <form method="POST"
+                action="/admin/recommendations/<%= item.id %>/delete"
+                onsubmit="return confirm('Permanently delete this recommendation? This cannot be undone.');">
+            <button type="submit" class="action-button delete-button">
+              Delete
+            </button>
+          </form>
+        </div>
+      </article>
+    <% }); %>
+  <% } %>
+</section>
+
+
+  </main>
+</body>
+</html>

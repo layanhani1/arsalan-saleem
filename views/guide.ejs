@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Discover Petra and Jordan through the eyes of local guide Arsalan Al-saleem."
+    >
+
+    <title>Arsalan Al-saleem | Discover Petra</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="home-page">
+
+    <!-- Navigation -->
+    <%- include('partials/header') %>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+
+            <!-- Background image -->
+            <div class="hero-image"></div>
+
+            <!-- Dark overlay -->
+            <div class="hero-overlay"></div>
+
+            <!-- Main content -->
+            <div class="hero-content">
+
+                <p class="hero-eyebrow">
+                    WADI MUSA <span>·</span> PETRA <span>·</span> JORDAN
+                </p>
+
+                <h1 class="hero-title">
+                    <span> Petra</span>
+                    <span class="hero-title-second">
+                        Through Local Eyes
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+                    Stories, places, and people that make
+                    <br class="desktop-break">
+                    Jordan unforgettable.
+                </p>
+
+                
+
+            </div>
+
+            <!-- Torn paper decoration -->
+            <div class="paper-edge" aria-hidden="true"></div>
+
+
+            <!-- Decorative postcard -->
+            <div class="hero-postcard" aria-hidden="true">
+
+                <div class="postcard-tape"></div>
+
+                <img
+                    src="./images/home/postcard.jpg"
+                    alt=""
+                >
+
+                <div class="postcard-caption">
+                    <span>POSTCARD FROM</span>
+                    <strong>PETRA, JORDAN</strong>
+                </div>
+
+            </div>
+
+            <!-- Decorative stamp -->
+            <div class="petra-stamp" aria-hidden="true">
+                <span class="stamp-top">PETRA</span>
+                <span class="stamp-symbol">✳</span>
+                <span class="stamp-bottom">JORDAN</span>
+            </div>
+
+            <!-- Decorative line -->
+            <svg
+                class="paper-decoration"
+                viewBox="0 0 700 100"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M0 85 C100 85 115 20 205 38 S310 80 390 35 S500 75 590 40 S660 60 700 20"
+                />
+            </svg>
+
+        </section>
+
+<!-- MEET YOUR GUIDE SECTION -->
+<section class="guide-card-section" id="meet-guide">
+
+    <div class="guide-card">
+
+        <!-- Guide Image -->
+        <div class="guide-card-image">
+            <img
+                src="/images/home/arsalan.jpeg"
+                alt="Arsalan Al-saleem, local guide in Petra"
+                loading="lazy"
+            >
+        </div>
+
+        <!-- Decorative Background -->
+        <div class="guide-card-decoration" aria-hidden="true">
+            <svg viewBox="0 0 250 100" preserveAspectRatio="none">
+                <path d="M0,20 C35,20 35,60 75,45 S130,5 165,35 S215,65 250,30"/>
+            </svg>
+        </div>
+
+        
+
+        <!-- Overlapping Text Card -->
+        <div class="guide-card-content">
+
+            <p class="guide-card-eyebrow">
+                YOUR LOCAL GUIDE IN PETRA
+            </p>
+
+            <h2> Arsalan Al-Saleem</h2>
+
+            <p class="guide-card-description">
+                Born and raised in Wadi Musa, Arsalan has been exploring
+                Petra since childhood. With deep local knowledge, a
+                distinctive personality, and a genuine love for sharing
+                his home, he turns every visit into a memorable experience.
+                His warm energy and engaging nature make every traveler
+                feel welcome — and every journey unforgettable.
+            </p>
+
+        </div>
+        <!-- Decorative Route -->
+        <div class="guide-card-route" aria-hidden="true">
+            <svg viewBox="0 0 200 90" preserveAspectRatio="none">
+                <path d="M5,80 C35,80 25,45 65,50 S100,80 130,45 S165,15 195,20"/>
+            </svg>
+        </div>
+
+    </div>
+
+</section>
+<!-- MOMENTS WITH OUR GUESTS -->
+<!-- GUEST PHOTO GALLERY -->
+<section class="guest-gallery-section" id="guest-gallery">
+
+    <div class="guest-gallery-heading">
+        <p class="guest-gallery-eyebrow">MEMORIES FROM PETRA</p>
+        <h2>Moments with Our Guests</h2>
+        <p class="guest-gallery-description">
+            Beautiful moments and unforgettable memories shared with our visitors.
+        </p>
+    </div>
+
+    <div class="guest-gallery-wrapper">
+
+        <div class="guest-gallery-track" id="guest-gallery-track">
+
+            <button class="guest-photo" type="button"
+                aria-label="View guest photo 1">
+                <img src="/images/home/gm1.png"
+                     alt="Arsalan with visitors in Petra">
+            </button>
+
+            <button class="guest-photo" type="button"
+                aria-label="View guest photo 2">
+                <img src="/images/home/gm2.jpeg"
+                     alt="Visitors exploring Petra with their guide">
+            </button>
+
+            <button class="guest-photo" type="button"
+                aria-label="View guest photo 3">
+                <img src="/images/home/gm3.jpeg"
+                     alt="Guests enjoying their Petra experience">
+            </button>
+
+            <button class="guest-photo" type="button"
+                aria-label="View guest photo 4">
+                <img src="/images/home/gm4.png"
+                     alt="Arsalan and international visitors">
+            </button>
+
+            <button class="guest-photo" type="button"
+                aria-label="View guest photo 5">
+                <img src="/images/home/gm5.png"
+                     alt="A memorable moment in Petra">
+            </button>
+
+            <button class="guest-photo" type="button"
+                aria-label="View guest photo 6">
+                <img src="/images/home/gm6.png"
+                     alt="Visitors discovering Jordan">
+            </button>
+
+        </div>
+
+    </div>
+
+    <p class="gallery-hint">
+        ← Swipe to explore more moments →
+    </p>
+
+</section>
+
+
+<!-- PHOTO LIGHTBOX -->
+<div class="guest-lightbox" id="guest-lightbox" aria-hidden="true">
+
+    <button class="lightbox-close" type="button"
+        aria-label="Close photo viewer">
+        &times;
+    </button>
+
+    <button class="lightbox-arrow lightbox-prev" type="button"
+        aria-label="Previous photo">
+        &#10094;
+    </button>
+
+    <figure class="lightbox-figure">
+        <img id="lightbox-image" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+
+    <button class="lightbox-arrow lightbox-next" type="button"
+        aria-label="Next photo">
+        &#10095;
+    </button>
+
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+
+</div>
+
+
+<!-- FULL-SCREEN PHOTO VIEWER -->
+<div class="guest-lightbox" id="guest-lightbox" aria-hidden="true">
+
+    <button class="lightbox-close" type="button" aria-label="Close image viewer">
+        &times;
+    </button>
+
+    <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous photo">
+        &#8592;
+    </button>
+
+    <figure class="lightbox-figure">
+        <img id="lightbox-image" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+
+    <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next photo">
+        &#8594;
+    </button>
+
+    <div class="lightbox-counter" id="lightbox-counter">1 / 9</div>
+
+</div>
+<!-- DISCOVER PETRA -->
+
+
+   
+<!-- WHY TRAVEL WITH ARSALAN -->
+<section class="why-arsalan-section" id="why-arsalan">
+
+    <div class="why-arsalan-inner">
+
+        <div class="why-arsalan-copy">
+
+            <h2>
+                Travel with a local.
+                <em>Remember it differently.</em>
+            </h2>
+
+            <p>
+                Petra is more than a place to see. It's a place to
+                experience, understand, and remember — with someone
+                who has called Wadi Musa home since childhood.
+            </p>
+
+            
+        </div>
+
+        <div class="why-arsalan-card">
+
+            <div class="why-point">
+                <span class="why-point-number">01</span>
+                <div>
+                    <h3>Rooted in Petra</h3>
+                    <p>A lifelong connection to Wadi Musa and its heritage.</p>
+                </div>
+            </div>
+
+            <div class="why-point">
+                <span class="why-point-number">02</span>
+                <div>
+                    <h3>Stories with Meaning</h3>
+                    <p>Discover the details that make every place special.</p>
+                </div>
+            </div>
+
+            <div class="why-point">
+                <span class="why-point-number">03</span>
+                <div>
+                    <h3>A Warm Welcome</h3>
+                    <p>A friendly, engaging approach that helps guests feel at ease.</p>
+                </div>
+            </div>
+
+            <div class="why-point">
+                <span class="why-point-number">04</span>
+                <div>
+                    <h3>Memories That Last</h3>
+                    <p>Make your time in Jordan personal and unforgettable.</p>
+                </div>
+            </div>
+
+            <div class="why-arsalan-stamp" aria-hidden="true">
+                <span>LOCAL</span>
+                <span>KNOWLEDGE</span>
+                <span>✳</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- FINAL CALL TO ACTION -->
+<section class="final-travel-cta" id="contact-cta">
+
+    <div class="final-cta-image">
+        <img
+            src="/images/home/cta.png"
+            alt=""
+            loading="lazy"
+        >
+    </div>
+
+    <div class="final-cta-overlay"></div>
+
+    <div class="final-cta-paper">
+
+        <span class="final-cta-kicker">YOUR JORDAN STORY STARTS HERE</span>
+
+        <h2>
+            Come for Petra.
+            <em>Leave with a story.</em>
+        </h2>
+
+        <p>
+            Discover the place, meet the people, and experience
+            Jordan through a local perspective.
+        </p>
+
+        <a href="/contact" class="final-cta-button">
+            Get in touch
+            <span>↗</span>
+        </a>
+
+        <div class="final-cta-signature">
+            ARSALAN AL-SALEEM <span>·</span> LOCAL GUIDE
+        </div>
+
+    </div>
+
+    <div class="final-cta-route" aria-hidden="true">
+        <svg viewBox="0 0 300 120" preserveAspectRatio="none">
+            <path d="M0 100 C55 100 35 25 100 40 S170 110 220 60 S270 20 300 25"/>
+        </svg>
+    </div>
+
+</section>
+
+
+
+    <%- include('partials/footer') %>
+
+    <script src="/js/main.js" defer></script>
+
+</body>
+</html>
