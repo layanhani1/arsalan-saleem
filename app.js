@@ -13,13 +13,18 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 
-const db = new pg.Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'reviews',
-  password: process.env.DB_PASSWORD,
-  port: 5432,
-});
+const db = process.env.DATABASE_URL
+    ? new pg.Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false },
+    })
+    : new pg.Client({
+        user: 'postgres',
+        host: 'localhost',
+        database: 'reviews',
+        password: process.env.DB_PASSWORD,
+        port: 5432,
+    });
 
 db.connect()
   .then(() => {
@@ -155,6 +160,8 @@ app.post('/recommendations', async (req, res) => {
 app.use('/admin', adminRoutes);
 
 
-app.listen (3000, () => {
-    console.log('Server is running on port 3000');
-    });
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
